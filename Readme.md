@@ -1,6 +1,7 @@
 Task 1:
 
 Install chef_client and chefDK on VM box
+
 Create solo.rb and Runlist.json
 Download chef_nginx and iptables 
 Make cookbooks by berks install & berks package
