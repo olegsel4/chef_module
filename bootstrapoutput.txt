@@ -1,0 +1,65 @@
+192.168.100.21 -----> Existing Chef installation detected
+192.168.100.21 Starting the first Chef Client run...
+192.168.100.21 [2017-04-09T18:23:08+01:00] INFO: Forking chef instance to converge...
+192.168.100.21 Starting Chef Client, version 12.19.36[0m
+192.168.100.21 [2017-04-09T18:23:08+01:00] INFO: *** Chef 12.19.36 ***
+192.168.100.21 [2017-04-09T18:23:08+01:00] INFO: Platform: x86_64-linux
+192.168.100.21 [2017-04-09T18:23:08+01:00] INFO: Chef-client pid: 14006
+192.168.100.21 [2017-04-09T18:23:10+01:00] INFO: Setting the run_list to ["role[jboss-role]"] from CLI options
+192.168.100.21 [2017-04-09T18:23:10+01:00] INFO: Run List is [role[jboss-role]]
+192.168.100.21 [2017-04-09T18:23:10+01:00] INFO: Run List expands to [jboss, java]
+192.168.100.21 [2017-04-09T18:23:10+01:00] INFO: Starting Chef Run for mig
+192.168.100.21 [2017-04-09T18:23:10+01:00] INFO: Running start handlers
+192.168.100.21 [2017-04-09T18:23:10+01:00] INFO: Start handlers complete.
+192.168.100.21 [2017-04-09T18:23:10+01:00] INFO: HTTP Request Returned 404 Not Found: 
+192.168.100.21 [2017-04-09T18:23:10+01:00] INFO: HTTP Request Returned 404 Not Found: 
+192.168.100.21 [2017-04-09T18:23:10+01:00] INFO: Error while reporting run start to Data Collector. URL: https://chefserver/organizations/4thcoffee/data-collector Exception: 404 -- 404 "Not Found"  (This is normal if you do not have Chef Automate)
+192.168.100.21 resolving cookbooks for run list: ["jboss", "java"][0m
+192.168.100.21 [2017-04-09T18:23:10+01:00] INFO: Loading cookbooks [jboss@0.1.0, java@1.48.0, apt@6.0.1, windows@3.0.4, ohai@5.0.2, homebrew@3.0.0]
+192.168.100.21 Synchronizing Cookbooks:[0m
+192.168.100.21   - jboss (0.1.0)[0m
+192.168.100.21   - ohai (5.0.2)[0m
+192.168.100.21   - java (1.48.0)[0m
+192.168.100.21   - apt (6.0.1)[0m
+192.168.100.21   - windows (3.0.4)[0m
+192.168.100.21   - homebrew (3.0.0)[0m
+192.168.100.21 Installing Cookbook Gems:[0m
+192.168.100.21 Compiling Cookbooks...[0m
+192.168.100.21 Converging 12 resources[0m
+192.168.100.21 Recipe: java::notify[0m
+192.168.100.21   * log[jdk-version-changed] action nothing[2017-04-09T18:23:10+01:00] INFO: Processing log[jdk-version-changed] action nothing (java::notify line 29)
+192.168.100.21  (skipped due to action :nothing)
+192.168.100.21 Recipe: java::openjdk[0m
+192.168.100.21   * yum_package[java-1.7.0-openjdk] action install[2017-04-09T18:23:10+01:00] INFO: Processing yum_package[java-1.7.0-openjdk] action install (java::openjdk line 53)
+192.168.100.21  (up to date)
+192.168.100.21   * yum_package[java-1.7.0-openjdk-devel] action install[2017-04-09T18:23:13+01:00] INFO: Processing yum_package[java-1.7.0-openjdk-devel] action install (java::openjdk line 53)
+192.168.100.21  (up to date)
+192.168.100.21   * java_alternatives[set-java-alternatives] action set[2017-04-09T18:23:13+01:00] INFO: Processing java_alternatives[set-java-alternatives] action set (java::openjdk line 59)
+192.168.100.21  (up to date)
+192.168.100.21 Recipe: java::set_java_home[0m
+192.168.100.21   * directory[/etc/profile.d] action create[2017-04-09T18:23:15+01:00] INFO: Processing directory[/etc/profile.d] action create (java::set_java_home line 19)
+192.168.100.21  (up to date)
+192.168.100.21   * template[/etc/profile.d/jdk.sh] action create[2017-04-09T18:23:15+01:00] INFO: Processing template[/etc/profile.d/jdk.sh] action create (java::set_java_home line 23)
+192.168.100.21  (up to date)
+192.168.100.21 Recipe: jboss::default[0m
+192.168.100.21   * yum_package[unzip] action install[2017-04-09T18:23:15+01:00] INFO: Processing yum_package[unzip] action install (jboss::default line 11)
+192.168.100.21  (up to date)
+192.168.100.21   * execute[untar_jboss] action run[2017-04-09T18:23:15+01:00] INFO: Processing execute[untar_jboss] action run (jboss::default line 15)
+192.168.100.21  (skipped due to not_if)
+192.168.100.21   * execute[unzip_app] action run[2017-04-09T18:23:15+01:00] INFO: Processing execute[unzip_app] action run (jboss::default line 25)
+192.168.100.21  (skipped due to not_if)
+192.168.100.21   * template[/etc/init.d/jboss] action create[2017-04-09T18:23:15+01:00] INFO: Processing template[/etc/init.d/jboss] action create (jboss::default line 30)
+192.168.100.21  (up to date)
+192.168.100.21   * template[/opt/jboss-as-7.1.1.Final/standalone/deployments/hudson/hudson.xml] action create[2017-04-09T18:23:15+01:00] INFO: Processing template[/opt/jboss-as-7.1.1.Final/standalone/deployments/hudson/hudson.xml] action create (jboss::default line 41)
+192.168.100.21  (up to date)
+192.168.100.21   * service[jboss] action enable[2017-04-09T18:23:15+01:00] INFO: Processing service[jboss] action enable (jboss::default line 48)
+192.168.100.21  (up to date)
+192.168.100.21   * service[jboss] action start[2017-04-09T18:23:15+01:00] INFO: Processing service[jboss] action start (jboss::default line 48)
+192.168.100.21  (up to date)
+192.168.100.21 [2017-04-09T18:23:15+01:00] INFO: Chef Run complete in 5.045579694 seconds
+192.168.100.21 [0m
+192.168.100.21 Running handlers:[0m
+192.168.100.21 [2017-04-09T18:23:15+01:00] INFO: Running report handlers
+192.168.100.21 Running handlers complete
+192.168.100.21 [0m[2017-04-09T18:23:15+01:00] INFO: Report handlers complete
+192.168.100.21 Chef Client finished, 0/13 resources updated in 07 seconds[0m
