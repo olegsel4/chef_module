@@ -1,0 +1,7 @@
+knife ssl fetch
+knife ssl check
+knife cookbook upload --all
+knife environment create test
+set EDITOR=vi
+knife bootstrap 192.168.100.21 -x root -P vagrant -r 'role[jboss-role]' -N mig -E test -y
+
