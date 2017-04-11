@@ -1,0 +1,59 @@
+192.168.100.30 -----> Existing Chef installation detected
+192.168.100.30 Starting the first Chef Client run...
+192.168.100.30 [2017-04-11T17:50:39+01:00] INFO: Forking chef instance to converge...
+192.168.100.30 Starting Chef Client, version 12.19.36[0m
+192.168.100.30 [2017-04-11T17:50:39+01:00] INFO: *** Chef 12.19.36 ***
+192.168.100.30 [2017-04-11T17:50:39+01:00] INFO: Platform: x86_64-linux
+192.168.100.30 [2017-04-11T17:50:39+01:00] INFO: Chef-client pid: 9278
+192.168.100.30 [2017-04-11T17:50:42+01:00] INFO: Setting the run_list to ["role[Apache_web_server]"] from CLI options
+192.168.100.30 [2017-04-11T17:50:43+01:00] INFO: Run List is [role[Apache_web_server]]
+192.168.100.30 [2017-04-11T17:50:43+01:00] INFO: Run List expands to [web::default]
+192.168.100.30 [2017-04-11T17:50:43+01:00] INFO: Starting Chef Run for node1
+192.168.100.30 [2017-04-11T17:50:43+01:00] INFO: Running start handlers
+192.168.100.30 [2017-04-11T17:50:43+01:00] INFO: Start handlers complete.
+192.168.100.30 [2017-04-11T17:50:43+01:00] INFO: HTTP Request Returned 404 Not Found: 
+192.168.100.30 [2017-04-11T17:50:43+01:00] INFO: HTTP Request Returned 404 Not Found: 
+192.168.100.30 [2017-04-11T17:50:43+01:00] INFO: Error while reporting run start to Data Collector. URL: https://chefserver/organizations/4thcoffee/data-collector Exception: 404 -- 404 "Not Found"  (This is normal if you do not have Chef Automate)
+192.168.100.30 resolving cookbooks for run list: ["web::default"][0m
+192.168.100.30 [2017-04-11T17:50:43+01:00] INFO: Loading cookbooks [web@0.1.0, web_nginx@0.1.0, web_apache@0.1.0]
+192.168.100.30 Synchronizing Cookbooks:[0m
+192.168.100.30   - web_apache (0.1.0)[0m
+192.168.100.30   - web (0.1.0)[0m
+192.168.100.30   - web_nginx (0.1.0)[0m
+192.168.100.30 Installing Cookbook Gems:[0m
+192.168.100.30 Compiling Cookbooks...[0m
+192.168.100.30 Converging 1 resources[0m
+192.168.100.30 Recipe: web_apache::default[0m
+192.168.100.30   * web[web_apache] action install[2017-04-11T17:50:43+01:00] INFO: Processing web[web_apache] action install (web_apache::default line 9)
+192.168.100.30  (up to date)
+192.168.100.30   * web[web_apache] action setup[2017-04-11T17:50:43+01:00] INFO: Processing web[web_apache] action setup (web_apache::default line 9)
+192.168.100.30  (up to date)
+192.168.100.30   * web[web_apache] action start[2017-04-11T17:50:43+01:00] INFO: Processing web[web_apache] action start (web_apache::default line 9)
+192.168.100.30  (up to date)
+192.168.100.30   * yum_package[httpd] action install[2017-04-11T17:50:43+01:00] INFO: Processing yum_package[httpd] action install (/var/chef/cache/cookbooks/web_apache/providers/default.rb line 2)
+192.168.100.30  (up to date)
+192.168.100.30   * service[httpd] action enable[2017-04-11T17:50:45+01:00] INFO: Processing service[httpd] action enable (/var/chef/cache/cookbooks/web_apache/providers/default.rb line 32)
+192.168.100.30  (up to date)
+192.168.100.30   * template[/var/www/html/index.html] action create[2017-04-11T17:50:45+01:00] INFO: Processing template[/var/www/html/index.html] action create (/var/chef/cache/cookbooks/web_apache/providers/default.rb line 36)
+192.168.100.30  (up to date)
+192.168.100.30   * service[httpd] action start[2017-04-11T17:50:45+01:00] INFO: Processing service[httpd] action start (/var/chef/cache/cookbooks/web_apache/providers/default.rb line 14)
+192.168.100.30  (up to date)
+192.168.100.30 [2017-04-11T17:50:46+01:00] INFO: Chef Run complete in 2.990934689 seconds
+192.168.100.30 [0m
+192.168.100.30 Running handlers:[0m
+192.168.100.30 [2017-04-11T17:50:46+01:00] INFO: Running report handlers
+192.168.100.30 Running handlers complete
+192.168.100.30 [0m[2017-04-11T17:50:46+01:00] INFO: Report handlers complete
+192.168.100.30 [0m
+192.168.100.30 Deprecated features used![0m
+192.168.100.30   Using an LWRP provider by its name (WebApache) directly is no longer supported in Chef 12 and will be removed.  Use Chef::ProviderResolver.new(node, resource, action) instead. at 1 location:[0m
+192.168.100.30     - /var/chef/cache/cookbooks/web_apache/recipes/default.rb:11:in `block in from_file'[0m
+192.168.100.30    See https://docs.chef.io/deprecations_custom_resource_cleanups.html for further details.[0m
+192.168.100.30   Cloning resource attributes for service[httpd] from prior resource
+192.168.100.30 [0mPrevious service[httpd]: /var/chef/cache/cookbooks/web_apache/providers/default.rb:32:in `block in class_from_file'
+192.168.100.30 [0mCurrent  service[httpd]: /var/chef/cache/cookbooks/web_apache/providers/default.rb:14:in `block in class_from_file' at 1 location:[0m
+192.168.100.30     - /var/chef/cache/cookbooks/web_apache/providers/default.rb:14:in `block in class_from_file'[0m
+192.168.100.30    See https://docs.chef.io/deprecations_resource_cloning.html for further details.[0m
+192.168.100.30 [0m
+192.168.100.30 Chef Client finished, 0/7 resources updated in 06 seconds[0m
+It's a index.erb from template by aslesarenka!(apache)

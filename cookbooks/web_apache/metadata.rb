@@ -1,0 +1,6 @@
+name             'web_apache'
+maintainer       'aslesarenka'
+maintainer_email 'aleh_slesarenka@epam.com'
+license          'All rights reserved'
+description      'Installs/Configures web_apache'
+version          '0.1.0'

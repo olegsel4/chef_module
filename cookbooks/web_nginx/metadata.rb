@@ -1,0 +1,6 @@
+name             'web_nginx'
+maintainer       'aslesarenka'
+maintainer_email 'aleh_slesarenka@epam.com'
+license          'All rights reserved'
+description      'Installs/Configures web_nginx'
+version          '0.1.0'
