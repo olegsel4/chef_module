@@ -1,0 +1,6 @@
+{
+
+"run_list": ["recipe[apache::enable_maintenance_mode]"]
+
+}
+
