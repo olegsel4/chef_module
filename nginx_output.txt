@@ -1,0 +1,52 @@
+192.168.100.31 -----> Existing Chef installation detected
+192.168.100.31 Starting the first Chef Client run...
+192.168.100.31 [2017-04-11T17:53:30+01:00] INFO: Forking chef instance to converge...
+192.168.100.31 Starting Chef Client, version 12.19.36[0m
+192.168.100.31 [2017-04-11T17:53:30+01:00] INFO: *** Chef 12.19.36 ***
+192.168.100.31 [2017-04-11T17:53:30+01:00] INFO: Platform: x86_64-linux
+192.168.100.31 [2017-04-11T17:53:30+01:00] INFO: Chef-client pid: 5938
+192.168.100.31 [2017-04-11T17:53:33+01:00] INFO: Setting the run_list to ["role[Nginx_web_server]"] from CLI options
+192.168.100.31 [2017-04-11T17:53:33+01:00] INFO: Run List is [role[Nginx_web_server]]
+192.168.100.31 [2017-04-11T17:53:33+01:00] INFO: Run List expands to [web::default]
+192.168.100.31 [2017-04-11T17:53:33+01:00] INFO: Starting Chef Run for node2
+192.168.100.31 [2017-04-11T17:53:33+01:00] INFO: Running start handlers
+192.168.100.31 [2017-04-11T17:53:33+01:00] INFO: Start handlers complete.
+192.168.100.31 [2017-04-11T17:53:33+01:00] INFO: HTTP Request Returned 404 Not Found: 
+192.168.100.31 [2017-04-11T17:53:33+01:00] INFO: HTTP Request Returned 404 Not Found: 
+192.168.100.31 [2017-04-11T17:53:33+01:00] INFO: Error while reporting run start to Data Collector. URL: https://chefserver/organizations/4thcoffee/data-collector Exception: 404 -- 404 "Not Found"  (This is normal if you do not have Chef Automate)
+192.168.100.31 resolving cookbooks for run list: ["web::default"][0m
+192.168.100.31 [2017-04-11T17:53:33+01:00] INFO: Loading cookbooks [web@0.1.0, web_nginx@0.1.0, web_apache@0.1.0]
+192.168.100.31 Synchronizing Cookbooks:[0m
+192.168.100.31   - web (0.1.0)[0m
+192.168.100.31   - web_apache (0.1.0)[0m
+192.168.100.31   - web_nginx (0.1.0)[0m
+192.168.100.31 Installing Cookbook Gems:[0m
+192.168.100.31 Compiling Cookbooks...[0m
+192.168.100.31 Converging 1 resources[0m
+192.168.100.31 Recipe: web_nginx::default[0m
+192.168.100.31   * web[web_nginx] action install[2017-04-11T17:53:33+01:00] INFO: Processing web[web_nginx] action install (web_nginx::default line 10)
+192.168.100.31  (up to date)
+192.168.100.31   * web[web_nginx] action setup[2017-04-11T17:53:33+01:00] INFO: Processing web[web_nginx] action setup (web_nginx::default line 10)
+192.168.100.31  (up to date)
+192.168.100.31   * web[web_nginx] action start[2017-04-11T17:53:33+01:00] INFO: Processing web[web_nginx] action start (web_nginx::default line 10)
+192.168.100.31  (up to date)
+192.168.100.31   * yum_package[nginx] action install[2017-04-11T17:53:33+01:00] INFO: Processing yum_package[nginx] action install (/var/chef/cache/cookbooks/web_nginx/providers/default.rb line 2)
+192.168.100.31  (up to date)
+192.168.100.31   * template[/usr/share/nginx/html/index.html] action create[2017-04-11T17:53:35+01:00] INFO: Processing template[/usr/share/nginx/html/index.html] action create (/var/chef/cache/cookbooks/web_nginx/providers/default.rb line 34)
+192.168.100.31  (up to date)
+192.168.100.31   * service[nginx] action start[2017-04-11T17:53:35+01:00] INFO: Processing service[nginx] action start (/var/chef/cache/cookbooks/web_nginx/providers/default.rb line 15)
+192.168.100.31  (up to date)
+192.168.100.31 [2017-04-11T17:53:35+01:00] INFO: Chef Run complete in 2.746025626 seconds
+192.168.100.31 [0m
+192.168.100.31 Running handlers:[0m
+192.168.100.31 [2017-04-11T17:53:35+01:00] INFO: Running report handlers
+192.168.100.31 Running handlers complete
+192.168.100.31 [0m[2017-04-11T17:53:35+01:00] INFO: Report handlers complete
+192.168.100.31 [0m
+192.168.100.31 Deprecated features used![0m
+192.168.100.31   Using an LWRP provider by its name (WebNginx) directly is no longer supported in Chef 12 and will be removed.  Use Chef::ProviderResolver.new(node, resource, action) instead. at 1 location:[0m
+192.168.100.31     - /var/chef/cache/cookbooks/web_nginx/recipes/default.rb:12:in `block in from_file'[0m
+192.168.100.31    See https://docs.chef.io/deprecations_custom_resource_cleanups.html for further details.[0m
+192.168.100.31 [0m
+192.168.100.31 Chef Client finished, 0/6 resources updated in 05 seconds[0m
+It's a index.erb from template by aslesarenka!(nginx)

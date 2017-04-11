@@ -1,0 +1,8 @@
+name             'web'
+maintainer       'aslesarenka'
+maintainer_email 'aleh_slesarenka@epam.com'
+license          'All rights reserved'
+description      'Installs/Configures web'
+version          '0.1.0'
+depends 'web_nginx'
+depends 'web_apache'
